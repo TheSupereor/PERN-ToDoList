@@ -30,9 +30,9 @@ const EditTodo = ({ todo }) => {
         <button 
         type="button" 
         className="btn btn-warning" 
-        data-toggle="modal" 
-        data-target={`#id${todo.todo_id}`}>
-            Edit
+        data-bs-toggle="modal" 
+        data-bs-target={`#id${todo.todo_id}`}>
+            Editar
         </button>
 
         <div 
@@ -43,57 +43,67 @@ const EditTodo = ({ todo }) => {
             setInicio(todo.inicio);
             setFim(todo.fim)}}>
             <div className="modal-dialog">
-                <div className="modal-content">
+                <div className="modal-content w-700">
                     <div className="modal-header">
                         <h4 className="modal-title">Editar To Do</h4>
                         <button type="button" 
-                        className="close" 
-                        data-dismiss="modal"
+                        className="btn-close" 
+                        data-bs-dismiss="modal"
                         onClick={() => {
                             setDescription(todo.description);
                             setInicio(todo.inicio);
                             setFim(todo.fim)
                         }}>
-                            &times;
                         </button>
                     </div>
 
-                    <div className="modal-body">
-                        <input type="text" 
-                        className="form-control" 
-                        value={description}
-                        onChange={e => setDescription(e.target.value)}
-                        />
-                        <input type="text" 
-                        className="form-control" 
-                        value={inicio}
-                        onChange={e => setInicio(e.target.value)}
-                        />
-                        <input type="text" 
-                        className="form-control" 
-                        value={fim}
-                        onChange={e => setFim(e.target.value)}
-                        />
+                    <div className="row modal-body">
+                        <div className="col-sm-12">
+                            <label className="mb-1">Tarefa:</label>        
+                            <input type="text" 
+                            className="form-control mb-2" 
+                            value={description}
+                            onChange={e => setDescription(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="col">
+                            <label className="mb-1">Início:</label>        
+                            <input type="time" 
+                            className="form-control mb-2" 
+                            value={inicio}
+                            onChange={e => setInicio(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="col">
+                            <label className="mb-1">Fim:</label>
+                            <input type="time" 
+                            className="form-control" 
+                            value={fim}
+                            onChange={e => setFim(e.target.value)}
+                            />
+                        </div>
                     </div>
 
                     <div className="modal-footer">
                         <button type="button" 
                         className="btn btn-warning" 
-                        data-dismiss="modal"
+                        data-bs-dismiss="modal"
                         onClick={e => updateToDo(e)}
                         >
-                            Edit
+                            Editar
                         </button>
 
                         <button type="button" 
                         className="btn btn-danger" 
-                        data-dismiss="modal"
+                        data-bs-dismiss="modal"
                         onClick={() => {
                             setDescription(todo.description);
                             setInicio(todo.inicio);
                             setFim(todo.fim)
                         }}>
-                            Close
+                            Fechar
                         </button>
                     </div>
                 </div>
