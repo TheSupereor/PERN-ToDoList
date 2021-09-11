@@ -17,7 +17,3 @@ Para utilizar precisa utilizar *npm i* para instalar as dependências tanto no s
 - [x] Bootstrap
 - [x] PostgresSql
 - [x] Express
-
----
-
-⚙ Erro no botão de edit, no qual, ao ser clicado, deveria ser mostrado uma modal para editar os dados, mas este não abre, não consegui achar onde o erro reside.
